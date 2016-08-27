@@ -17,16 +17,16 @@
 # limitations under the License.
 #
 
-case node['platform_family'] 
+case node['platform_family']
 when 'rhel'
 
-  if node['platform'] == 'oracle' then
-    short_name = 'ol'
-  elsif node['platform'] == 'redhat' then
-    short_name = 'rhel'
-  else
-    short_name = node['platform'].downcase
-  end
+  short_name = if node['platform'] == 'oracle'
+                 'ol'
+               elsif node['platform'] == 'redhat'
+                 'rhel'
+               else
+                 node['platform'].downcase
+               end
 
   yum_repository 'ksplice-uptrack' do
     description 'Ksplice Uptrack'
@@ -36,7 +36,7 @@ when 'rhel'
   end
 when 'debian'
   apt_repository 'ksplice-uptrack' do
-    uri "http://www.ksplice.com/apt/"
+    uri 'http://www.ksplice.com/apt/'
     distribution node['lsb']['codename']
     components ['ksplice']
     key 'https://www.ksplice.com/apt/ksplice-archive.asc'

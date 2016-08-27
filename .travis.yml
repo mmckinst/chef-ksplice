@@ -18,3 +18,9 @@ script:
   - /opt/chefdk/embedded/bin/foodcritic --version
   - /opt/chefdk/embedded/bin/foodcritic . --exclude spec -f any
   - /opt/chefdk/embedded/bin/rspec
+
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
