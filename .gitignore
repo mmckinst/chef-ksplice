@@ -1,0 +1,7 @@
+vendor/
+Gemfile.lock
+.bundle/
+Berksfile.lock
+.vagrant/
+.vagrant.d/
+.kitchen/
