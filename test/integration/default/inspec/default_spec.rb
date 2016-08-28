@@ -1,5 +1,5 @@
 describe package 'uptrack' do
-  it { should be_installed}
+  it { should be_installed }
 end
 
 describe file('/etc/cron.d/uptrack') do

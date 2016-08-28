@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mmckinst/chef-ksplice.svg?branch=master)](https://travis-ci.org/mmckinst/chef-ksplice)
+
 # ksplice Cookbook
 
 This cookbook installs and manages [ksplice](https://www.ksplice.com/).

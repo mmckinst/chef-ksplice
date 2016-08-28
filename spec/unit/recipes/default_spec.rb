@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'ksplice::default' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new().converge(described_recipe)
+    ChefSpec::SoloRunner.new.converge(described_recipe)
   end
 
   it 'installs uptrack' do
@@ -20,5 +20,4 @@ describe 'ksplice::default' do
   it 'creates cron job' do
     expect(chef_run).to create_cron('export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin && [ -x /usr/sbin/uptrack-upgrade ] && /usr/sbin/uptrack-upgrade --cron')
   end
-
 end
